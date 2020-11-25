@@ -1,5 +1,6 @@
 package composite;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -36,5 +37,10 @@ public class File extends Node {
     @Override
     public Boolean isFile() {
         return Boolean.TRUE;
+    }
+
+    @Override
+    public HashMap<String, Node> getChildren() {
+        return new HashMap<>();
     }
 }

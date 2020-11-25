@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class Directory extends Node {
 
-    private HashMap<String, Node> children = new HashMap<>();
+    private HashMap<String, Node> children;
     public Directory(String path, Node parent) {
         super(path, parent);
         children = new HashMap<>();
@@ -38,7 +38,7 @@ public class Directory extends Node {
     @Override
     public void createDirectory(String name) {
         if(!children.containsKey(name)) {
-            String directoryPath = getPath().concat("/").concat(name);
+            String directoryPath = name;
             Node directory = new Directory(directoryPath, this);
             children.put(directory.getPath(), directory);
         } else {
@@ -50,7 +50,7 @@ public class Directory extends Node {
     @Override
     public void createFile(String name) {
         if(!children.containsKey(name)) {
-            String filePath = getPath().concat("/").concat(name);
+            String filePath =name;
             if(filePath.length() > 100) {
                 filePath = filePath.substring(0,100);
             }
@@ -62,5 +62,10 @@ public class Directory extends Node {
     @Override
     public Boolean isFile() {
         return Boolean.FALSE;
+    }
+
+    @Override
+    public HashMap<String, Node> getChildren() {
+        return children;
     }
 }

@@ -2,7 +2,6 @@ package processor.commands;
 
 import composite.Node;
 
-import java.util.List;
 import java.util.Set;
 
 public class LsCommand implements Command {
@@ -16,7 +15,7 @@ public class LsCommand implements Command {
         Set<Node> children = node.listChildren();
         Boolean recursive = param.equals("-r");
         for (Node child: children){
-            System.out.println(child.getPath());
+            System.out.println(child.getFullPath());
             if(recursive) {
                 runCommand(child, param);
             }

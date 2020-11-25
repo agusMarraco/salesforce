@@ -1,0 +1,4 @@
+mkdir pepe
+mkdir pepe2
+cd pepe
+touch pepe3

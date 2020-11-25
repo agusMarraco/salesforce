@@ -1,7 +1,6 @@
 package processor.commands;
 
 import composite.Node;
-import processor.CommandProcessor;
 
 public class PwdCommand implements Command {
     @Override
@@ -11,7 +10,7 @@ public class PwdCommand implements Command {
 
     @Override
     public Node runCommand(Node node, String param) {
-        System.out.println(node.getPath());
+        System.out.println(node.getFullPath());
         return node;
     }
 }
